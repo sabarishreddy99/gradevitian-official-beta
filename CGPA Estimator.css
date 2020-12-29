@@ -165,6 +165,15 @@ input {
     bottom: 4%;
   }
 
+  .pop-up-close-icon {
+    position: absolute;
+    top: 1%;
+    right: 0.3%;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+  }
+
   .result-img {
     position: absolute;
     top: 1.8%;
