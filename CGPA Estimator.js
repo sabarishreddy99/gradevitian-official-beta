@@ -4,7 +4,7 @@
 function showPopup(){
 
   document.getElementById('pop-up-result').style.display="flex";
-  document.getElementById('pop-up-blur').style.filter="blur(20px)";
+  document.getElementById('pop-up-blur').style.filter="blur(30px)";
 }
 
 function closePopup(){
