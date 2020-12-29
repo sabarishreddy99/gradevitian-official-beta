@@ -33,6 +33,49 @@
 </head>
 <body>
 
+  
+<!-- ----------------------------------  POP UP     --------------------------------------- -->
+
+<div class="full-screen flex-container-center hidden" id="pop-up-result">
+  <img class="result-img" src="result pop-up.svg" alt="gradeVITian result">
+  
+  <!-- BODY of pop-up -->
+
+ <!-- sem wise calculation -->
+  <p id="note-msg"><strong>Note:</strong>If you are failed in a particular course(s) in any of the semesters; kindly visit the GPA calculator section and calculate your GPA <b>excluding failed course(s)</b> for that sem and proceed with this.</p>  
+<h5><strong id="alertcgpacal"></strong></h5>
+<h5 id="alertcgpacal1" ></h5>
+
+  <!-- sem wise reset -->
+<h5><strong id="alertcgpacalr"></strong></h5>
+<h5 id="alertcgpacal1r"></h5>
+
+
+  <!-- Instant calculation -->
+ <h5> <strong id="iestcgpa"></strong></h5>
+ <h5 id="iestcgpa1"></h5>
+
+  <!-- Instant reset -->
+<h5><strong id="alerticgpacalr"></strong></h5>
+<h5 id="alerticgpacal1r"></h5>
+
+
+
+
+
+
+
+  <i class="pop-up-close-icon" title="Close" onclick="closePopup()"><i class="far fa-times-circle fa-2x"></i></i>
+  <button class="pop-up-close-button btn btn-dark btn-sm"  type="button" title="Close pop-up" onclick="closePopup()" >Close</button>
+  <h6 class="pop-up-watermark">gradeVITian.in</h6>
+
+</div>
+<!-- ---------------------------------------  POP UP END  ---------------------------------- -->
+
+
+<!-- Total blur except pop up -->
+<div id="pop-up-blur">
+
 
 
 
@@ -224,7 +267,7 @@
 
         <div class="col align-self-start course-div-parts">
        <h6>Credits</h6>
-       <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+       <input type="number" id="sem2c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
       
         </div>
           
@@ -237,7 +280,7 @@
         
         <div class="col align-self-end course-div-parts">
           <h6>GPA</h6>
-          <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+          <input type="number" id="sem2g" min="0" max="10" placeholder="max-10" step="0.1">
 
         </div>
 
@@ -254,7 +297,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem3c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -267,7 +310,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem3g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -285,7 +328,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem4c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -298,7 +341,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem4g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -319,7 +362,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem5c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -332,7 +375,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem5g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -348,7 +391,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem6c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -361,7 +404,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem6g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -379,7 +422,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem7c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -392,7 +435,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem7g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -411,7 +454,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem8c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -424,7 +467,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem8g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -444,7 +487,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem9c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -457,7 +500,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem9g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -477,7 +520,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem10c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -490,7 +533,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem10g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -508,7 +551,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem11c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -521,7 +564,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem11g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -541,7 +584,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-         <input type="number" id="sem1c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
+         <input type="number" id="sem12c" min="1" max="50" step="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="max-50">
         
           </div>
             
@@ -554,7 +597,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>GPA</h6>
-            <input type="number" id="sem1g" min="0" max="10" placeholder="max-10" step="0.1">
+            <input type="number" id="sem12g" min="0" max="10" placeholder="max-10" step="0.1">
   
           </div>
   
@@ -572,13 +615,13 @@
 
      
          
-            <button type="button" class="btn btn-outline-dark btn-md btn1">Reset <i class="fas fa-sliders-h"></i></button>
+            <button type="button" class="btn btn-outline-dark btn-md btn1" onClick="showPopup();cgpacalculationreset();semwisenull();instantnull();instantresetnull();shownote();" >Reset <i class="fas fa-sliders-h"></i></button>
          
       
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();cgpacalculation();semwiseresetnull();instantnull();instantresetnull();shownote();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
          
        
       </div>
@@ -662,13 +705,13 @@
 
      
          
-      <button type="button" class="btn btn-outline-dark btn-md btn1">Reset <i class="fas fa-sliders-h"></i></button>
+      <button type="button" class="btn btn-outline-dark btn-md btn1" onClick="showPopup();icgpacalculationreset();semwisenull();semwiseresetnull();instantnull();notenull();">Reset <i class="fas fa-sliders-h"></i></button>
    
 
 
 
 
-      <button type="button" class="btn btn-dark btn-md btn2">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+      <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();icgpacalculation();semwisenull();semwiseresetnull();instantresetnull();notenull();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
    
  
 </div>
@@ -875,6 +918,560 @@
 
 
 
+</div>
 
+<script>
+//------------------------------------- input alerts-------------------------------------------
+
+//All input limits
+
+//--------------------------------semwise CGPA---------------------------------------------------------------------
+
+document.getElementById("sem1c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem1c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem1c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem1g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem1g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem1g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+    document.getElementById("sem2c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem2c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem2c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem2g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem2g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem2g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+
+
+document.getElementById("sem3c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem3c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem3c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem3g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem3g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem3g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+document.getElementById("sem4c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem4c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem4c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem4g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem4g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem4g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+document.getElementById("sem5c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem5c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem5c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem5g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem5g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem5g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+document.getElementById("sem6c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem6c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem6c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem6g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem6g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem6g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+
+document.getElementById("sem7c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem7c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem7c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem7g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem7g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem7g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+document.getElementById("sem8c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem8c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem8c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem8g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem8g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem8g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+
+
+
+
+document.getElementById("sem9c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem9c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem9c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem9g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem9g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem9g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+document.getElementById("sem10c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem10c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem10c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem10g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem10g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem10g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+document.getElementById("sem11c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem11c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem11c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem11g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem11g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem11g").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+document.getElementById("sem12c").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem12c").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("sem12c").value="";
+      }
+
+      return;
+
+    }
+
+
+
+     document.getElementById("sem12g").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("sem12g").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("sem12g").value="";
+      }
+
+      return;
+
+    }
+
+//----------------------------------------------INSTANT CGPA--------------------------------------------------------
+
+document.getElementById("iccgpa").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("iccgpa").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("iccgpa").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+document.getElementById("iccredits").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("iccredits").value="";
+        }
+        
+        if(input<1 || input>300)
+        {
+        alert("Value should be between 1 - 300");
+        document.getElementById("iccredits").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+document.getElementById("iCGPAneed").onkeyup=function(){
+        var input=parseFloat(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("iCGPAneed").value="";
+        }
+        
+        if(input<0 || input>10)
+        {
+        alert("Value should be between 0 - 10");
+        document.getElementById("iCGPAneed").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+
+document.getElementById("incredits").onkeyup=function(){
+        var input=parseInt(this.value);
+        if(Number.isNaN(input)){
+              document.getElementById("incredits").value="";
+        }
+        
+        if(input<1 || input>50)
+        {
+        alert("Value should be between 1 - 50");
+        document.getElementById("incredits").value="";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+</script>
 </body>
 </html>

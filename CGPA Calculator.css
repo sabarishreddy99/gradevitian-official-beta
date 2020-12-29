@@ -1,3 +1,68 @@
+/* ------------------------------------  POP UP ----------------------------------------------- */
+
+.full-screen {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+  background-color: #efeeee;
+  border: solid 3px #383754;
+  border-radius: 10px;
+}
+
+.pop-up-close-icon {
+  position: absolute;
+  top: 1.8%;
+  right: 1%;
+  cursor: pointer;
+}
+
+.pop-up-close-button {
+  position: absolute;
+  bottom: 1.8%;
+  right: 0.9%;
+  border-radius: 30px;
+}
+
+.result-img {
+  position: absolute;
+  top: 1.8%;
+  text-align: center;
+  height: 120px;
+}
+
+.pop-up-watermark {
+  position: absolute;
+  bottom: 0.4%;
+  left: 1%;
+  font-family: "Pacifico", cursive;
+  color: #b7b7b9;
+}
+
+.flex-container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.full-screen {
+  font-family: "Montserrat", sans-serif;
+  color: #50505e;
+}
+
+.hidden {
+  display: none;
+}
+
+/* BODY of pop-up */
+#note-msg {
+  background-color: #e4dfdf;
+}
+
 /* --------------------------------------   SECTION-2    --------------------------------------- */
 /* Gradepredictor section */
 
