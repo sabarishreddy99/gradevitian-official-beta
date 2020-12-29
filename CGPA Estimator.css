@@ -60,6 +60,18 @@
   display: none;
 }
 
+/* BODY of pop-up */
+
+.estcgpa,
+.estcgpa1 {
+  font-family: "Montserrat", sans-serif;
+  color: #040414;
+}
+
+.estcgpa1 {
+  font-weight: bold;
+}
+
 /* --------------------------------------   SECTION-2    --------------------------------------- */
 /* CGPA Estimator section */
 

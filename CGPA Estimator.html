@@ -36,7 +36,15 @@
 
 <div class="full-screen flex-container-center hidden" id="pop-up-result">
   <img class="result-img" src="result pop-up.svg" alt="gradeVITian result">
-  <h2 >Let me tell you about this thing!!</h2>
+  
+  <!-- BODY of pop-up -->
+ 
+<h5 id="estcgpa" ></h5>
+<h5 id="estcgpa1"></h5>
+
+
+
+
   <i class="pop-up-close-icon"  type="button" title="Close" onclick="closePopup()"><i class="far fa-times-circle fa-2x"></i></i>
   <button class="pop-up-close-button btn btn-dark btn-sm"  type="button" title="Close pop-up" onclick="closePopup()" >Close</button>
   <h6 class="pop-up-watermark">gradeVITian.in</h6>
@@ -195,7 +203,7 @@
 
 
 
-       <form>
+       <form id="cgpaestform">
 
 
          <div class="input-bottom-space">     
@@ -244,13 +252,13 @@
 
      
          
-            <button type="button" class="btn btn-outline-dark btn-md btn1">Reset <i class="fas fa-sliders-h"></i></button>
+            <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="cgpaestreset()">Reset <i class="fas fa-sliders-h"></i></button>
          
       
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup()" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup();cgpaestimation();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
 
 
          
@@ -467,5 +475,89 @@
 
 
 </div>
+
+
+<!-- ----------------------------------input alerts----------------------------------- -->
+<script>
+
+  
+document.getElementById("CGPAneed").onkeyup=function(){
+  var input=parseFloat(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("CGPAneed").value="";
+  }
+  
+  if(input<0 || input>10)
+  {
+  alert("Value should be between 0 - 10");
+  document.getElementById("CGPAneed").value="";
+}
+
+return;
+
+}
+
+
+
+document.getElementById("ccgpa").onkeyup=function(){
+  var input=parseFloat(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("ccgpa").value="";
+  }
+  
+  if(input<0 || input>10)
+  {
+  alert("Value should be between 0 - 10");
+  document.getElementById("ccgpa").value="";
+}
+
+return;
+
+}
+
+
+
+
+document.getElementById("ccredits").onkeyup=function(){
+
+  var input=parseInt(this.value);
+
+  if(Number.isNaN(input)){
+        document.getElementById("ccredits").value="";
+  }
+  
+  if(input<1 || input>300)
+  {
+  alert("Value should be between 1 - 300");
+  document.getElementById("ccredits").value="";
+}
+
+return;
+
+}
+
+
+
+document.getElementById("ncredits").onkeyup=function(){
+
+
+  var input=parseInt(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("ncredits").value="";
+  }
+  
+  if(input<1 || input>50)
+  {
+  alert("Value should be between 1 - 50");
+  document.getElementById("ncredits").value="";
+}
+
+return;
+
+}
+
+
+
+</script>
 </body>
 </html>
