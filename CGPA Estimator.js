@@ -105,23 +105,28 @@ function cgpaestimation()
  var cc = parseInt(document.getElementById("ccredits").value); 
  var nc = parseInt(document.getElementById("ncredits").value); 
 
+ 
+
 if((x<=0 || gpa<=0 || cc<=0 || nc<=0)){
-document.getElementById("estcgpa").innerHTML = "Kindly check your entries; shouldn't be zero or empty.";
-document.getElementById("estcgpa1").innerHTML = "";
+document.getElementById("estcgpa").innerHTML = "Kindly check your entries.";
+document.getElementById("estcgpa").style.fontWeight= "bold";
+document.getElementById("estcgpa1").innerHTML = "It shouldn't be zero or empty.";
 
 }
 
 
 else if(x>10||gpa>10){
-document.getElementById("estcgpa").innerHTML = "Kindly check your entries; Average limit of GPA or CGPA is (0< X <=10).";
-document.getElementById("estcgpa1").innerHTML = "";
+document.getElementById("estcgpa").innerHTML = "Kindly check your entries.";
+document.getElementById("estcgpa").style.fontWeight= "bold";
+document.getElementById("estcgpa1").innerHTML = "Average limit of GPA or CGPA is (0< X <=10).";
 
 }
 
 
 else if(cc>300||nc>50){
-document.getElementById("estcgpa").innerHTML = "Kindly check your entries; Credits limitation (1<= Credits Completed <=300 & 1<= Credits Taken <=50 ).";
-document.getElementById("estcgpa1").innerHTML = "";
+document.getElementById("estcgpa").innerHTML = "Kindly check your entries.";
+document.getElementById("estcgpa").style.fontWeight= "bold";
+document.getElementById("estcgpa1").innerHTML = "Credits limitation (1<= Credits Completed <=300 & 1<= Credits Taken <=50 ).";
 
 }
 
