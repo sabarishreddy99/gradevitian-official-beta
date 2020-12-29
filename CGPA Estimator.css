@@ -38,7 +38,7 @@
 .pop-up-watermark {
   position: absolute;
   bottom: 0.4%;
-  left: 0.5%;
+  left: 1%;
   font-family: "Pacifico", cursive;
   color: #b7b7b9;
 }
@@ -185,6 +185,14 @@ input {
     top: 1.8%;
     text-align: center;
     height: 100px;
+  }
+
+  .pop-up-watermark {
+    position: absolute;
+    bottom: 0.4%;
+    left: 2%;
+    font-family: "Pacifico", cursive;
+    color: #b7b7b9;
   }
 
   /* -----------------------------------SECTION-2---------------------------------------------- */
