@@ -24,7 +24,7 @@
 .pop-up-close-button {
   position: absolute;
   bottom: 1.8%;
-  right: 1.3%;
+  right: 0.9%;
   border-radius: 30px;
 }
 
@@ -168,13 +168,13 @@ input {
     left: 6.5%;
     right: 6.5%;
     top: 4%;
-    bottom: 4%;
+    bottom: 25%;
   }
 
   .pop-up-close-icon {
     position: absolute;
-    top: 0.4%;
-    right: 0.5%;
+    top: 0.8%;
+    right: 1.15%;
     border-radius: 50%;
     border: none;
     outline: none;
