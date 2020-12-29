@@ -20,6 +20,7 @@ function closePopup(){
 function cgpaestreset() {
   document.getElementById("cgpaestform").reset();
   document.getElementById("estcgpa").innerHTML="Form is at it's default state.";
+  document.getElementById("estcgpa").style.fontWeight= "bold";
   document.getElementById("estcgpa1").innerHTML="You can proceed...";
 }
 
