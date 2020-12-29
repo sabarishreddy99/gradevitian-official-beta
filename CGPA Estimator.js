@@ -113,7 +113,7 @@ document.getElementById("estcgpa1").innerHTML = "";
 
 
 else if(x>10||gpa>10){
-document.getElementById("estcgpa").innerHTML = "Kindly check your entries; Average limit GPA or CGPA is (0< X <=10).";
+document.getElementById("estcgpa").innerHTML = "Kindly check your entries; Average limit of GPA or CGPA is (0< X <=10).";
 document.getElementById("estcgpa1").innerHTML = "";
 
 }
@@ -136,16 +136,22 @@ document.getElementById("estcgpa1").innerHTML = "";
 }
 else if(estnum1>10){
 document.getElementById("estcgpa").innerHTML =nc+" Credit(s) you have taken aren't enough to get "+x+" CGPA."+" Excel in the upcomming semesters.";
+document.getElementById("estcgpa").style.fontWeight= "bold";
 document.getElementById("estcgpa1").innerHTML = "Just missed. You are at it. Best of luck next time!";
+
 
 }
 else if(estnum1>=9){
 document.getElementById("estcgpa").innerHTML = "Your minimum GPA in the next sem should be "+estnum1.toFixed(3)+".";
+document.getElementById("estcgpa").style.fontWeight= "bold";
 document.getElementById("estcgpa1").innerHTML = "You are Terrific! and Happy Learning!";
+
 }
 else{
-document.getElementById("estcgpa").innerHTML = "Your minimum GPA in the next sem should be "+estnum1.toFixed(3)+".&#9971;";
+document.getElementById("estcgpa").innerHTML = "Your minimum GPA in the next sem should be "+estnum1.toFixed(3)+".";
+document.getElementById("estcgpa").style.fontWeight= "bold";
 document.getElementById("estcgpa1").innerHTML = "Happy Learning!";
+
 }
 
 
