@@ -89,7 +89,6 @@ a {
   width: 100%;
   padding-top: 300px;
   position: fixed;
-
   z-index: 1;
   top: 0;
   left: 0;
@@ -134,12 +133,14 @@ a {
   color: #1d1c2e;
 }
 .intro-txt-line-2 {
-  color: #646466;
+  color: #52525f;
+  font-family: "Montserrat", sans-serif;
 }
 .intro-text h1 a {
   color: #1d1c2e;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
 .intro-img {
