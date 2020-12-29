@@ -16,9 +16,7 @@
   position: absolute;
   top: 1.8%;
   right: 1%;
-  border-radius: 50%;
-  border: none;
-  outline: none;
+  cursor: pointer;
 }
 
 .pop-up-close-button {
