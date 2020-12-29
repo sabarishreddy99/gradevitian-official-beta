@@ -172,15 +172,6 @@ input {
 /* ---------------------------------------------MOBILE---------------------------------------- */
 
 @media screen and (max-width: 500px) {
-  .full-screen {
-    position: absolute;
-    z-index: 1;
-    left: 6.5%;
-    right: 6.5%;
-    top: 4%;
-    bottom: 25%;
-  }
-
   .pop-up-close-icon {
     position: absolute;
     top: 0.8%;
@@ -251,6 +242,29 @@ input {
 }
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
+  .pop-up-close-icon {
+    position: absolute;
+    top: 0.8%;
+    right: 1.15%;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+  }
+
+  .result-img {
+    position: absolute;
+    top: 1.8%;
+    text-align: center;
+    height: 120px;
+  }
+
+  .pop-up-watermark {
+    position: absolute;
+    bottom: 0.4%;
+    left: 2%;
+    font-family: "Pacifico", cursive;
+    color: #b7b7b9;
+  }
   /* -----------------------------------SECTION-2-------------------------------------------- */
   .section2 {
     padding-top: 200px;

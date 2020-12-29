@@ -28,11 +28,15 @@ a {
 
 /* --------------------------------------   Fixed tops    -------------------------------- */
 
-#go-to-top {
+.go-to-top {
   position: fixed;
   right: 2.5%;
   bottom: 2.5%;
   z-index: 1;
+}
+
+.go-to-top button i {
+  font-size: 20px;
 }
 
 .copy-clipboard {
