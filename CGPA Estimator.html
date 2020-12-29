@@ -32,11 +32,19 @@
 <body>
 
 
+<!-- ----------------------------------  POP UP     --------------------------------------- -->
+
+<div class="full-screen flex-container-center hidden" id="pop-up-result">
+  <h2 >Let me tell you about this thing!!</h2>
+  <button class="pop-up-close-icon"  type="button" title="Close" onclick="closePopup()"><i class="far fa-times-circle fa-2x"></i></button>
+  <button class="pop-up-close-button btn btn-dark btn-md"  type="button" title="Close pop-up" onclick="closePopup()" >Close</button>
+
+</div>
+<!-- ---------------------------------------  POP UP END  ---------------------------------- -->
 
 
-
-
-  
+<!-- Total blur except pop up -->
+<div id="pop-up-blur">
 <!-- ----------------------------FIXED tops---------------------------------------------- -->
 
 <div class="fixed-tops" >
@@ -54,9 +62,6 @@
   
   </div>
   
-
-  
-
 
 
   <!-- section1 -->
@@ -243,7 +248,9 @@
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup()" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+
+
          
        
       </div>
@@ -266,6 +273,9 @@
 
 
   </section>
+
+
+
 
 
 
@@ -454,6 +464,6 @@
 
 
 
-
+</div>
 </body>
 </html>

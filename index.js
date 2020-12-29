@@ -1,7 +1,7 @@
 // navbar collapse mobile view
 
 function openNav() {
-  document.getElementById("myNav").style.height = "150vh";
+  document.getElementById("myNav").style.height = "108%";
 }
 
 function closeNav() {

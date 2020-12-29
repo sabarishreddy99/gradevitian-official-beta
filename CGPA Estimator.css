@@ -1,3 +1,50 @@
+/* ------------------------------------  POP UP ----------------------------------------------- */
+
+.full-screen {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+  background-color: #efeeee;
+  border: solid 3px #383754;
+  border-radius: 10px;
+}
+
+.pop-up-close-icon {
+  position: absolute;
+  top: 1.8%;
+  right: 1%;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+.pop-up-close-button {
+  position: absolute;
+  bottom: 1.8%;
+  right: 2%;
+  border-radius: 30px;
+}
+
+.flex-container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.full-screen {
+  font-family: "Montserrat", sans-serif;
+  color: #50505e;
+}
+
+.hidden {
+  display: none;
+}
+
 /* --------------------------------------   SECTION-2    --------------------------------------- */
 /* CGPA Estimator section */
 
