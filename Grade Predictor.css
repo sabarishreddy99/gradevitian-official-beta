@@ -99,7 +99,48 @@ input {
   text-align: right;
   margin-right: 1%;
 }
+/* -------------------------------------------SECTION-2A---------------------------------------- */
 
+.section-2a {
+  position: relative;
+}
+
+.weightage-conv-sec {
+  background-color: #efeeee;
+  border-radius: 15px;
+  border: solid 1px rgb(207, 206, 206);
+  /* box-shadow: 10px 10px 16px -2px #ccc, -10px -10px 16px -2px #fff; */
+  position: relative;
+  margin: 0px 10px;
+  /* padding: 10px; */
+}
+
+.weightage-conv-img {
+  position: absolute;
+  top: 105px;
+  left: 50px;
+  height: 200px;
+}
+
+.weightage-conv-txt {
+  position: absolute;
+  top: 37%;
+  right: 6%;
+  font-family: "Montserrat", sans-serif;
+  color: #50505e;
+  font-size: 40px;
+}
+
+.weightage-conv-sec h2 {
+  font-family: "Fira Sans", sans-serif;
+  color: #383754;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weightage-partition {
+  margin-bottom: 12px;
+}
 /* ---------------------------------------------MOBILE---------------------------------------- */
 
 @media screen and (max-width: 500px) {
@@ -115,6 +156,19 @@ input {
   input,
   select {
     width: 81px;
+  }
+  /* -------------------------------------------SECTION-2A---------------------------------------- */
+
+  .weightage-conv-img {
+    display: none;
+  }
+
+  .weightage-conv-txt {
+    display: none;
+  }
+
+  .weightage-conv-sec input {
+    width: 170px;
   }
 }
 
@@ -133,6 +187,20 @@ input {
   select {
     width: 130px;
   }
+
+  /* -------------------------------------------SECTION-2A---------------------------------------- */
+
+  .weightage-conv-img {
+    display: none;
+  }
+
+  .weightage-conv-txt {
+    display: none;
+  }
+
+  .weightage-conv-sec input {
+    width: 170px;
+  }
 }
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
@@ -148,5 +216,22 @@ input {
   input,
   select {
     width: 150px;
+  }
+  /* -------------------------------------------SECTION-2A---------------------------------------- */
+
+  .weightage-conv-img {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    height: 115px;
+  }
+
+  .weightage-conv-txt {
+    position: absolute;
+    top: 45%;
+    right: 2%;
+    font-family: "Montserrat", sans-serif;
+    color: #50505e;
+    font-size: 23px;
   }
 }
