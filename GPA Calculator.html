@@ -32,6 +32,46 @@
 </head>
 <body>
 
+<!-- ----------------------------------  POP UP     --------------------------------------- -->
+
+<div class="full-screen flex-container-center hidden" id="pop-up-result">
+  <img class="result-img" src="result pop-up.svg" alt="gradeVITian result">
+  
+  <!-- BODY of pop-up -->
+
+
+    <!-- gpa calculation -->
+  
+    <h5><strong id="alertgpacal"></strong></h5>
+    <h5 id="alertgpacal1"></h5>
+
+    
+
+
+ <!-- gpa calculation reset -->
+
+ <h5><strong id="alertgpacalr"></strong></h5>
+ <h5 id="alertgpacal1r" ></h5>
+
+
+
+
+
+
+
+
+
+
+  <i class="pop-up-close-icon" title="Close" onclick="closePopup()"><i class="far fa-times-circle fa-2x"></i></i>
+  <button class="pop-up-close-button btn btn-dark btn-sm"  type="button" title="Close pop-up" onclick="closePopup()" >Close</button>
+  <h6 class="pop-up-watermark">gradeVITian.in</h6>
+
+</div>
+<!-- ---------------------------------------  POP UP END  ---------------------------------- -->
+
+
+<!-- Total blur except pop up -->
+<div id="pop-up-blur">
 
 
 
@@ -42,6 +82,7 @@
   <div class="go-to-top">
     <button  type="button" title="Go to top" onclick="topFunction()" class="btn btn-dark btn-sm"><i class="fas fa-angle-double-up"></i></button>
     </div>
+
 
 
 <div class="copy-clipboard">
@@ -250,7 +291,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred2">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -267,7 +308,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat2" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -281,7 +322,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad2">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -310,7 +351,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred3">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -327,7 +368,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat3" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -341,7 +382,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad3">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -361,7 +402,7 @@
           
 
 
-          <!-- --------------------------   course-4   ------------------------------------------ -->
+          <!-- --------------------------   course-4  ------------------------------------- -->
           <div class="course-division-dark-variant">
             <br>
         <div class="row">
@@ -370,7 +411,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred4">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -386,8 +427,8 @@
   
   
           <div class="col align-self-center course-div-parts">
-            <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <h6>Category </h6>
+            <select id="gcat4" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -401,7 +442,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad4">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -432,7 +473,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred5">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -449,7 +490,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat5" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -463,7 +504,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad5">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -492,7 +533,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred6">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -509,7 +550,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat6" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -523,7 +564,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad6">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -553,7 +594,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred7">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -570,7 +611,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat7" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -584,7 +625,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad7">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -613,7 +654,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred8">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -630,7 +671,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat8" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -644,7 +685,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad8">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -674,7 +715,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred9">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -691,7 +732,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat9" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -705,7 +746,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad9">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -735,7 +776,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred10">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -752,7 +793,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat10" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -766,7 +807,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad10">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -795,7 +836,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred11">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -812,7 +853,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat11" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -826,7 +867,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad11">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -857,7 +898,7 @@
   
           <div class="col align-self-start course-div-parts">
          <h6>Credits</h6>
-            <select id="gcred1">
+            <select id="gcred12">
                <option selected="selected">Credits</option>
                <option>1</option>
               <option>2</option>
@@ -874,7 +915,7 @@
   
           <div class="col align-self-center course-div-parts">
             <h6>Category</h6>
-            <select id="gcat1" placeholder="Course Category">
+            <select id="gcat12" placeholder="Course Category">
                <option selected="selected">Course Category</option>
                <option>PC (Program Core) </option>
               <option>PE (Program Elective) </option>
@@ -888,7 +929,7 @@
           
           <div class="col align-self-end course-div-parts">
             <h6>Grade</h6>
-            <select id="ggrad1">
+            <select id="ggrad12">
                <option selected="selected">Grade</option>
                <option>S</option>
               <option>A</option>
@@ -918,13 +959,13 @@
 
      
          
-            <button type="button" class="btn btn-outline-dark btn-md btn1">Reset <i class="fas fa-sliders-h"></i></button>
+            <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="showPopup();gpacalreset();">Reset <i class="fas fa-sliders-h"></i></button>
          
       
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup();gpacal()">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
          
        
       </div>
@@ -1135,6 +1176,6 @@
 
 
 
-
+</div>
 </body>
 </html>
