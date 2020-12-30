@@ -60,14 +60,14 @@
 
 <div class="fixed-tops" >
 
-
   <div class="go-to-top">
-    <button  type="button" title="Go to top" onclick="topFunction()" class="btn btn-dark btn-sm"><i class="fas fa-angle-double-up"></i></button>
+    <button  type="button" title="Go to top" onclick="topFunction()" class="btn btn-secondary btn-sm"><i class="fas fa-angle-double-up"></i></button>
     </div>
-  
-  
+
+
   <div class="copy-clipboard">
-    <button  type="button" title="Copy website link" class="btn btn-dark btn-sm"><i class="far fa-clipboard"></i></button>
+  <p id="clip-text" style="display: none;"> https://gradevitian.in/CGPA%20Estimator.html </p>
+  <button  type="button" data-toggle="tooltip" data-placement="right" title="Copy Link" class="btn btn-secondary btn-sm" id="copy-text-btn"><i class="far fa-clipboard"></i></button>
   </div>
   
   
@@ -556,6 +556,36 @@ document.getElementById("ncredits").onkeyup=function(){
 return;
 
 }
+
+
+
+
+
+// ------------------------------- copy-clip board--------------------------------
+function copyText(htmlElement){
+  if(!htmlElement){
+    return;
+  }
+
+  let elementText = htmlElement.innerText;
+  let inputElement = document.createElement('input');
+  inputElement.setAttribute('value', elementText);
+  document.body.appendChild(inputElement);
+  inputElement.select();
+  document.execCommand('copy');
+  inputElement.parentNode.removeChild(inputElement);
+
+}
+document.querySelector('#copy-text-btn').onclick = 
+function(){
+copyText(document.querySelector('#clip-text'));
+}
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 
 
 
