@@ -12,19 +12,19 @@ if (navigator.serviceWorker) {
 
 let deferredPrompt;
 const addBtn1pc = document.querySelector('#btn1pc');
-addBtn1pc.style.display = 'none';
+// addBtn1pc.style.display = 'none';
 
 
 const addBtn2pc = document.querySelector('#btn2pc');
-addBtn2pc.style.display = 'none';
+// addBtn2pc.style.display = 'none';
 
 
 const addBtn1mob = document.querySelector('#btn1mob');
-addBtn1mob.style.display = 'none';
+// addBtn1mob.style.display = 'none';
 
 
 const addBtn2mob = document.querySelector('#btn2mob');
-addBtn2mob.style.display = 'none';
+// addBtn2mob.style.display = 'none';
 
 // ------------------------------------- btn1 pc --------------------------
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -38,7 +38,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
   addBtn1pc.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
-    addBtn1pc.style.display = 'none';
+    // addBtn1pc.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -68,7 +68,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
   addBtn2pc.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
-    addBtn2pc.style.display = 'none';
+    // addBtn2pc.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -97,7 +97,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
   addBtn1mob.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
-    addBtn1mob.style.display = 'none';
+    // addBtn1mob.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -126,7 +126,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
   addBtn2mob.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
-    addBtn2mob.style.display = 'none';
+    // addBtn2mob.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
