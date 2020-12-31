@@ -432,7 +432,7 @@ textarea:focus {
 }
 /* ---------------------------------------------MOBILE---------------------------------------- */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   /* --------------------------------  fixed tops ----------------------------------------------- */
   .go-to-top {
     position: fixed;
@@ -572,7 +572,85 @@ textarea:focus {
   }
 }
 /* ------------------------------------    TABLET     -------------------------------------------- */
-@media screen and (min-width: 500px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 750px) {
+  /* -----------------------------------SECTION -1 ------------------------------------------- */
+  .intro-img {
+    height: 850px;
+    width: 850px;
+    position: absolute;
+    left: 30%;
+    top: 350px;
+    margin-top: -70px;
+    z-index: -1;
+  }
+
+  /* -----------------------------------SECTION-2-------------------------------------------- */
+
+  /* ----------------------------------------SECTION-3----------------------------------------- */
+
+  .explore-sec h1 {
+    top: 35%;
+    right: 2%;
+  }
+
+  .exp-btns {
+    position: absolute;
+    top: 32%;
+    left: 10%;
+  }
+  .exp-btns button {
+    display: block;
+    margin: 10px 0 10px 3px;
+    border-radius: 40px;
+    width: 200px;
+  }
+
+  .exp-btns-add {
+    position: absolute;
+    bottom: 3%;
+    right: 2.5%;
+  }
+
+  /*---------------------------------FEEDBACK SECTION------------------------------------- */
+  .feedback-img,
+  .feedback-appreciation {
+    display: none;
+  }
+
+  .improve-img {
+    position: absolute;
+    bottom: 0.5%;
+    left: 0%;
+    width: 150px;
+    height: 100px;
+  }
+  /* ------------------------------------------ FOOTER-SECTION  ----------------------------- */
+  .winner-img {
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+
+  .winner-txt {
+    position: absolute;
+    font-family: "Pacifico", cursive;
+    color: #a0a0a0;
+    font-size: 25px;
+    bottom: 15px;
+    right: 6px;
+  }
+  .devices-img {
+    display: none;
+  }
+
+  .devices-txt {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1024px) {
   /* -----------------------------------SECTION -1 ------------------------------------------- */
   .intro-img {
     height: 850px;
@@ -627,6 +705,7 @@ textarea:focus {
     color: #50505e;
     font-size: 23px;
   }
+
   /* ------------------------------------------ FOOTER-SECTION  ----------------------------- */
   .winner-img {
     height: 140px;
