@@ -211,7 +211,7 @@ textarea:focus {
 
 .exp-btns {
   position: absolute;
-  top: 20%;
+  top: 8%;
   left: 10%;
 }
 .exp-btns button {
@@ -219,6 +219,19 @@ textarea:focus {
   margin: 20px;
   border-radius: 40px;
   width: 200px;
+}
+
+.exp-btns-add {
+  position: absolute;
+  bottom: 3%;
+  right: 1%;
+}
+.exp-btns-add a {
+  margin-left: 5px;
+}
+
+.fa-whatsapp:hover {
+  color: rgb(24, 173, 24);
 }
 
 /* ------------------------------------SECTION-4------------------------------------------------ */
@@ -495,14 +508,20 @@ textarea:focus {
 
   .exp-btns {
     position: absolute;
-    top: 45%;
-    left: 0%;
+    top: 37%;
+    left: 1%;
   }
   .exp-btns button {
     display: block;
     margin: 10px 0 10px 3px;
     border-radius: 40px;
     width: 180px;
+  }
+
+  .exp-btns-add {
+    position: absolute;
+    bottom: 3%;
+    right: 4%;
   }
   /*---------------------------------FEEDBACK SECTION------------------------------------- */
   .feedback-img,
@@ -584,6 +603,12 @@ textarea:focus {
     margin: 10px 0 10px 3px;
     border-radius: 40px;
     width: 200px;
+  }
+
+  .exp-btns-add {
+    position: absolute;
+    bottom: 3%;
+    right: 2.5%;
   }
 
   /* --------------------------------------------FEEDBACK-SECTION------------------------------- */
