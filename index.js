@@ -93,4 +93,47 @@ window.onload = function() {
 
 
 
+ //--------------------feed back----------------------------------------
+
+ function yes1() {
+  document.getElementById("no").style.color = "";
+  document.getElementById("yes").style.color = "green";
+  document.getElementById("helpful").value = "Satisfied";
+  document.getElementById("Message").placeholder = "We are glad that you are satisfied. Help us to improve further.";
+
+}
+function no1() {
+  document.getElementById("no").style.color = "red";
+  document.getElementById("yes").style.color = "";
+  document.getElementById("helpful").value = "Unsatisfied";
+  document.getElementById("Message").placeholder = "We are sorry to know that you are unsatisfied. Help us to improve by posting your difficulty.";
+ 
+
+}
+function sendfeedback() {
+  var thumbs = document.getElementById('helpful').value;
+  var name = document.getElementById('Name').value;
+  var msg = document.getElementById('Message').value;
+  if (thumbs.length != 0 && name.length != 0 && msg.length != 0) {
+    alert("Your feedback is highly valuable. Thank you & Happy Learning!");
+
+  }
+
+
+}
+
+
+function validatedetails() {
+  var thumbs = document.getElementById('helpful').value;
+  var name = document.getElementById('Name').value;
+  var msg = document.getElementById('Message').value;
+  if (thumbs.length == 0 || name.length == 0 || msg.length == 0) {
+    alert("Please fill all the entries and let us improve further.");
+    return false;
+  }
+}
+
+
+
+
 

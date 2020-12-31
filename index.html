@@ -816,13 +816,13 @@
                  
 
     <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScU5sLk7MvefZpVwBOzL4essV7cU8zUlIvuystDjRBqyjeD5g/formResponse"
-        method="post" target="hidden_iframe" onsubmit="validateName()">
+    method="post" target="hidden_iframe" onsubmit="validatedetails()">
 
 
         <div class="thumbs-btn">
 
-          <button type="button" class="btn btn-lg"><i class="fas fa-thumbs-up"></i></button>
-        <button type="button" class="btn btn-lg"><i class="fas fa-thumbs-down"></i></button>
+          <button type="button" class="btn btn-lg" title="Yes" id="yes" onclick="yes1()"><i class="fas fa-thumbs-up"></i></button>
+        <button type="button" class="btn btn-lg" title="No" id="no" onclick="no1()"><i class="fas fa-thumbs-down"></i></button>
 
         <input type="hidden" id="helpful" name="entry.1222579797" value="">
 
@@ -832,7 +832,7 @@
         <div>
           
             <h6 >Name : </h6>
-          <input type="text" id="Name" name="entry.946033457" placeholder="Your good name...">
+          <input type="text" id="Name" name="entry.946033457" placeholder="Your good name..." value="">
         </div>
 
 
@@ -842,15 +842,19 @@
             <h6>Your message :</h6>
       
           <textarea rows="5" id="Message" name="entry.1814573274"
-            placeholder="Your suggestions..."></textarea>
+            placeholder="Your suggestions..." value=""></textarea>
         </div>
 
 
         
 <div class="feedback-send">
-          <button type="submit" class="btn btn-dark btn-lg">Send <i class="far fa-paper-plane"></i></button>
+          <button type="submit" class="btn btn-dark btn-lg" title="Send Feedback" id="send" onclick="sendfeedback()">Send <i class="far fa-paper-plane"></i></button>
         </div>
           
+
+          <!--Update the URL for thank you page on form submit -->
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+          onload="if(submitted) {window.location='https://gradevitian.in/';}"></iframe>
 
 
       </form>
