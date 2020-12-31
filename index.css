@@ -211,7 +211,7 @@ textarea:focus {
 
 .exp-btns {
   position: absolute;
-  top: 8%;
+  top: 12%;
   left: 10%;
 }
 .exp-btns button {
@@ -508,7 +508,7 @@ textarea:focus {
 
   .exp-btns {
     position: absolute;
-    top: 37%;
+    top: 41%;
     left: 1%;
   }
   .exp-btns button {
