@@ -34,6 +34,59 @@
 
 
 
+<!-- ----------------------------------  POP UP     --------------------------------------- -->
+
+<div class="full-screen flex-container-center hidden" id="pop-up-result">
+  <img class="result-img" src="result pop-up.svg" alt="gradeVITian result">
+  
+  <!-- BODY of pop-up -->
+
+
+    <!-- grade predictor -->
+    <strong> <p id="gradepred" ></p></strong> 
+    <strong> <p id="gradepred1" ></p></strong> 
+    <strong> <p id="gradepred2" ></p></strong> 
+    <strong> <p id="gradepred3" ></p></strong> 
+    <strong> <p id="gradepred4" ></p></strong> 
+
+    
+
+
+ <!-- grade predictor reset -->
+
+ <h5><strong id="gradepredr"></strong></h5>
+ <h5 id="gradepred1r" ></h5>
+
+
+
+
+
+  <!-- weightage converter -->
+  <h5><strong id="weigh-conv-result"></strong></h5>
+
+
+   <!-- weightage converter reset -->
+   <h5><strong id="weigh-conv-reset"></strong></h5>
+
+
+
+
+
+
+
+
+
+  <i class="pop-up-close-icon" title="Close" onclick="closePopup()"><i class="far fa-times-circle fa-2x"></i></i>
+  <button class="pop-up-close-button btn btn-dark btn-sm"  type="button" title="Close pop-up" onclick="closePopup()" >Close</button>
+  <h6 class="pop-up-watermark">gradeVITian.in</h6>
+
+</div>
+<!-- ---------------------------------------  POP UP END  ---------------------------------- -->
+
+
+<!-- Total blur except pop up -->
+<div id="pop-up-blur">
+
 
 <!-- ----------------------------FIXED tops---------------------------------------------- -->
 
@@ -182,7 +235,7 @@
 
        <!-- form start -->
 
-       <form id="gradeform">
+       <form id="gradepred-form">
         
         <div>
 
@@ -403,7 +456,17 @@
           </div>
 
           <br>
+
+          
         </div>
+        <!-- ---------------------------Terms of use--------------------------- -->
+        <br>
+        <h5 id="terms-of-use"><a href="" data-toggle="collapse" data-target="#demo">Terms of Use</a></h5>
+        
+        <div id="demo" class="collapse">
+        <p><b>Note:</b> This section is designed and tends to give accurate results only if your secured score is <b>out of</b> above mentioned values. If not convert them using <b>weightage converter</b> (scroll down) and proceed with this.</p>
+        </div>
+       
     
        
 
@@ -418,13 +481,13 @@
 
      
          
-            <button type="button" class="btn btn-outline-dark btn-md btn1">Reset <i class="fas fa-sliders-h"></i></button>
+            <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="showPopup();gradeprednull();gradepredreset();weightageconvnull();weightageconvresetnull();">Reset <i class="fas fa-sliders-h"></i></button>
          
       
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup();gradepredresetnull();gradepred();weightageconvnull();weightageconvresetnull();">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
          
        
       </div>
@@ -483,7 +546,7 @@
 
         <div class="weightage-partition">
           <h6>Original marks obtained</h6>
-            <input type="number" id="obt-org" min="0" step="1" max="100" placeholder="(max-100)" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+            <input type="number" id="obtained-org" min="0" step="1" max="100" placeholder="(max-100)" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
           </div>
        
@@ -504,13 +567,13 @@
 
      
          
-      <button type="button" class="btn btn-outline-dark btn-md btn1" onClick="showPopup();">Reset <i class="fas fa-sliders-h"></i></button>
+      <button type="button" class="btn btn-outline-dark btn-md btn1" onClick="showPopup();gradeprednull();gradepredresetnull();weightageconvnull();weightageconvreset();">Reset <i class="fas fa-sliders-h"></i></button>
    
 
 
 
 
-      <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+      <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();gradeprednull();gradepredresetnull();weightageconv();weightageconvresetnull();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
    
  
 </div>
@@ -713,8 +776,272 @@
 
 
 
+</div>   <!-- ----------------------------blur div------------------------ -->
+
+
+
 
 <script>
+
+
+//All input limits
+
+
+document.getElementById("pcat1").onkeyup = function () {
+      var x = document.getElementById("withouttfat");
+      var input = parseFloat(this.value);
+     
+        if (Number.isNaN(input)) {
+          document.getElementById("pcat1").value = "";
+        }
+
+        if (input < 0 || input > 50) {
+          alert("Value should be between 0 - 50");
+          document.getElementById("pcat1").value = "";
+        }
+    
+
+      return;
+
+    }
+
+
+    document.getElementById("pcat2").onkeyup = function () {
+
+      var x = document.getElementById("withouttfat");
+      var input = parseFloat(this.value);
+   
+        if (Number.isNaN(input)) {
+          document.getElementById("pcat2").value = "";
+        }
+
+        if (input < 0 || input > 50) {
+          alert("Value should be between 0 - 50");
+          document.getElementById("pcat2").value = "";
+        }
+     
+
+      return;
+
+    }
+
+
+
+    document.getElementById("pdq1").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pdq1").value = "";
+      }
+
+      if (input < 0 || input > 10) {
+        alert("Value should be between 0 - 10");
+        document.getElementById("pdq1").value = "";
+      }
+
+      return;
+
+    }
+
+
+
+    document.getElementById("pdq2").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pdq2").value = "";
+      }
+
+      if (input < 0 || input > 10) {
+        alert("Value should be between 0 - 10");
+        document.getElementById("pdq2").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("pdq3").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pdq3").value = "";
+      }
+
+      if (input < 0 || input > 10) {
+        alert("Value should be between 0 - 10");
+        document.getElementById("pdq3").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("ptf").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("ptf").value = "";
+      }
+
+      if (input < 0 || input > 100) {
+        alert("Value should be between 0 - 100");
+        document.getElementById("ptf").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("pli").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pli").value = "";
+      }
+
+      if (input < 0 || input > 60) {
+        alert("Value should be between 0 - 60");
+        document.getElementById("pli").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("plf").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("plf").value = "";
+      }
+
+      if (input < 0 || input > 50) {
+        alert("Value should be between 0 - 50");
+        document.getElementById("plf").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("pj1").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pj1").value = "";
+      }
+
+      if (input < 0 || input > 20) {
+        alert("Value should be between 0 - 20");
+        document.getElementById("pj1").value = "";
+      }
+
+      return;
+
+    }
+
+
+
+    document.getElementById("pj2").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pj2").value = "";
+      }
+
+      if (input < 0 || input > 30) {
+        alert("Value should be between 0 - 30");
+        document.getElementById("pj2").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("pj3").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("pj3").value = "";
+      }
+
+      if (input < 0 || input > 50) {
+        alert("Value should be between 0 - 50");
+        document.getElementById("pj3").value = "";
+      }
+
+      return;
+
+    }
+
+
+
+
+
+    document.getElementById("adl").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("adl").value = "";
+      }
+
+      if (input < 0 || input > 10) {
+        alert("Value should be between 0 - 10");
+        document.getElementById("adl").value = "";
+      }
+
+      return;
+
+    }
+
+
+    document.getElementById("max-org").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("max-org").value = "";
+      }
+
+      if (input < 0 || input > 100) {
+        alert("Value should be between 0 - 100");
+        document.getElementById("max-org").value = "";
+      }
+
+      return;
+
+    }
+
+
+
+
+    document.getElementById("max-weightage").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("max-weightage").value = "";
+      }
+
+      if (input < 0 || input > 100) {
+        alert("Value should be between 0 - 100");
+        document.getElementById("max-weightage").value = "";
+      }
+
+      return;
+
+    }
+
+
+
+    document.getElementById("obtained-org").onkeyup = function () {
+      var input = parseFloat(this.value);
+      if (Number.isNaN(input)) {
+        document.getElementById("obtained-org").value = "";
+      }
+
+      if (input < 0 || input > 100) {
+        alert("Value should be between 0 - 100");
+        document.getElementById("obtained-org").value = "";
+      }
+
+      return;
+
+    }
+
 
   
 // ------------------------------- copy-clip board--------------------------------
