@@ -1,3 +1,12 @@
+//---------------------------loading ----------------------------------------
+
+function loadfunc(){
+	var h=document.getElementById("loading");
+	h.style.display="none";
+	
+
+}
+
 // navbar collapse mobile view
 
 function openNav() {
