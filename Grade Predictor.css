@@ -59,11 +59,6 @@
 }
 /* --------------------------------------   SECTION-2    --------------------------------------- */
 /* Gradepredictor section */
-p {
-  font-family: "Montserrat", sans-serif;
-  color: #383754;
-  text-align: center;
-}
 
 .section2 {
   padding: 270px 10px 10px 10px;
@@ -166,6 +161,12 @@ input {
 
 #terms-of-use {
   color: rgb(62, 162, 165);
+}
+
+#terms-of-use-div p {
+  font-family: "Montserrat", sans-serif;
+  color: #383754;
+  text-align: center;
 }
 /* -------------------------------------------SECTION-2A---------------------------------------- */
 
