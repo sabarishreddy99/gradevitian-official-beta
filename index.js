@@ -1,13 +1,24 @@
 //---------------------------loading ----------------------------------------
 
-function loadfunc(){
+function loadfunc() {
 
 	var h=document.getElementById("loading");
   h.style.display="none";
   
 }
 
-// -----------------------navbar collapse mobile view
+//---------------------------new year----------------------------------------
+
+function closenewyear() {
+
+  var h=document.getElementById("new-year");
+  h.style.display="none";
+
+}
+
+
+
+// -----------------------navbar collapse mobile view  -----------------------------
 
 function openNav() {
   document.getElementById("myNav").style.height = "108%";
