@@ -85,3 +85,7 @@ a:hover {
   border-radius: 40px;
   border-width: 3px;
 }
+
+.qr-img {
+  height: 150px;
+}

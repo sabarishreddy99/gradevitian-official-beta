@@ -12,7 +12,7 @@ self.addEventListener('install', function (event) {
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(
         [
-          'index.html','index.js','index.css','CGPA Calculator.css','CGPA Calculator.js','GPA Calculator.html','GPA Calculator.css','GPA Calculator.js','Grade Predictor.html','Grade Predictor.css','Grade Predictor.js','CGPA Estimator.html','CGPA Estimator.css','CGPA Estimator.js','Attendance Calculator.html','Attendance Calculator.css','Attendance Calculator.js','attendance-cal-2 -inpimg.svg','attendance-inp-img.svg','devices.svg','explore.svg','feedback.svg','gpaimg.svg','growth.svg','improve.svg','instant-cgpaimg.svg','intro-img.svg','loading.svg','male-avtar.svg','result pop-up.svg','target.svg','weightage-conv.svg','winner.svg','LOGO-512px.png','LOGO-192px.png','sabari-avtar.jpg','manifest.json','main.js'
+          'index.html','index.js','index.css','CGPA Calculator.css','CGPA Calculator.js','GPA Calculator.html','GPA Calculator.css','GPA Calculator.js','Grade Predictor.html','Grade Predictor.css','Grade Predictor.js','CGPA Estimator.html','CGPA Estimator.css','CGPA Estimator.js','Attendance Calculator.html','Attendance Calculator.css','Attendance Calculator.js','comments.html','comments.css','comments.js','comments.svg','attendance-cal-2 -inpimg.svg','attendance-inp-img.svg','devices.svg','explore.svg','feedback.svg','gpaimg.svg','growth.svg','improve.svg','instant-cgpaimg.svg','intro-img.svg','loading.svg','male-avtar.svg','result pop-up.svg','target.svg','weightage-conv.svg','winner.svg','LOGO-512px.png','LOGO-192px.png','sabari-avtar.jpg','manifest.json','main.js'
         ]
       );
     })
