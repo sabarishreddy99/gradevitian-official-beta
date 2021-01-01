@@ -33,7 +33,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
-  addBtn1pc.style.display = 'block';
+  addBtn1pc.style.display = 'inline-block';
 
 
   addBtn1pc.addEventListener('click', (e) => {
@@ -63,7 +63,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
-  addBtn2pc.style.display = 'block';
+  addBtn2pc.style.display = 'inline-block';
 
 
   addBtn2pc.addEventListener('click', (e) => {

@@ -1,13 +1,13 @@
 //---------------------------loading ----------------------------------------
 
 function loadfunc(){
-	var h=document.getElementById("loading");
-	h.style.display="none";
-	
 
+	var h=document.getElementById("loading");
+  h.style.display="none";
+  
 }
 
-// navbar collapse mobile view
+// -----------------------navbar collapse mobile view
 
 function openNav() {
   document.getElementById("myNav").style.height = "108%";
@@ -18,6 +18,7 @@ function closeNav() {
 }
 
 
+// -------------------------------  Type Writer-----------------------------------
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
@@ -59,7 +60,7 @@ TxtType.prototype.tick = function() {
   }, delta);
 };
 
-window.onload = function() {
+function introTEXTtypewriting() {
   var elements = document.getElementsByClassName('typewrite');
   for (var i=0; i<elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');

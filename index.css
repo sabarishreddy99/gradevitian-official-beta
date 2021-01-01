@@ -192,10 +192,15 @@ textarea:focus {
 .add2home button {
   margin: 5px;
   border-radius: 60px;
+  display: inline;
 }
 
 .twinbtns-mob {
   display: none;
+}
+
+.twinbtns-pc {
+  display: block;
 }
 /* ----------------------------------------   SECTION-2   -------------------------------------- */
 
