@@ -1,3 +1,8 @@
+
+var jQueryScript = document.createElement('script');  
+jQueryScript.setAttribute('src','https://unpkg.com/sweetalert/dist/sweetalert.min.js');
+document.head.appendChild(jQueryScript);
+
 //---------------------------loading ----------------------------------------
 
 function loadfunc() {
@@ -15,6 +20,11 @@ function closenewyear() {
   h.style.display="none";
 
 }
+
+
+  
+
+
 
 
 
@@ -149,7 +159,13 @@ function validatedetails() {
   var name = document.getElementById('Name').value;
   var msg = document.getElementById('Message').value;
   if (thumbs.length == 0 || name.length == 0 || msg.length == 0) {
-    alert("Please fill all the entries and let us improve further.");
+    swal({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+     
+    })
+    // alert("Please fill all the entries and let us improve further.");
     return false;
   }
 }

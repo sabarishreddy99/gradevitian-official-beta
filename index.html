@@ -25,6 +25,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
+<!-- -- Sweet Alert-- -->
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
 
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -33,10 +36,12 @@
   <!-- stylesheets -->
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="CGPA Calculator.css">
+  <link rel="stylesheet" href="darkmode.css">
   
   <!-- Javascript files -->
   <script src="index.js"></script>
   <script src="CGPA Calculator.js"></script>
+
 
 
   <!-- ---------- PWA FILES------------ -->
@@ -49,7 +54,11 @@
   <meta name="apple-mobile-web-app-status-bar-style">
   <meta name="theme-color" content="#ffffff">
   <script src="main.js" defer></script>
-	
+  
+  
+
+
+  
 
 </head>
 
@@ -73,8 +82,10 @@
   <img src="new-year-2021.svg" alt="New Year 2021">
   <br>
   <h3>Let's dive into</h3>
-  <button class="btn btn-outline-dark btn-sm"  type="button" title="Happy New Year - 2021" onclick="closenewyear()" > <b>2021</b> <i class="fas fa-arrow-alt-circle-right"></i></button>
+  <button class="btn btn-outline-dark btn-sm" id="new-year-close"  type="button" title="Happy New Year - 2021" onclick="closenewyear()" > <b>2021</b> <i class="fas fa-arrow-alt-circle-right"></i></button>
 </div>
+
+
 
 
 
@@ -925,7 +936,6 @@
 
 
 
-
   </section>
 
 
@@ -1578,7 +1588,8 @@ $(function () {
 })
 
 
-
 </script>
+<script src="jquery.min.js"></script>
+<script src="jquery.firstVisitPopup.js"></script>
 </body>
 </html>
