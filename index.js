@@ -22,6 +22,32 @@ function closenewyear() {
 }
 
 
+//---------------------------Dark Mode --------------------------------------
+
+function darkmodefunc(){
+  var checkbox = document.getElementById('darkmodeid');
+  var stylesheet = document.getElementById('darkmode-style');
+
+    if (checkbox.checked==true) {
+      stylesheet.parentNode.addChild(stylesheet);
+    
+      // var element = document.getElementById("darkmode-div");
+      //   element.classList.add("mode");
+    } else {
+      stylesheet.parentNode.removeChild(stylesheet);
+      
+      // var element = document.getElementById("darkmode-div");
+      //   element.classList.remove("mode");
+    }
+
+
+}
+
+
+
+
+
+
   
 
 

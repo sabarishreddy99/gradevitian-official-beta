@@ -36,7 +36,7 @@
   <!-- stylesheets -->
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="CGPA Calculator.css">
-  <link rel="stylesheet" href="darkmode.css">
+  <link rel="stylesheet" href="darkmode.css" id="darkmode-style">
   
   <!-- Javascript files -->
   <script src="index.js"></script>
@@ -141,6 +141,9 @@
 <div class="fixed-tops" >
 
 
+
+
+
   <div class="go-to-top">
     <button  type="button" title="Go to top" onclick="topFunction()" class="btn btn-secondary btn-sm"><i class="fas fa-angle-double-up"></i></button>
     </div>
@@ -150,6 +153,7 @@
   <p id="clip-text" style="display: none;"> https://gradevitian.in/ </p>
   <button  type="button" data-toggle="tooltip" data-placement="right" title="Copy Link" class="btn btn-secondary btn-sm" id="copy-text-btn"><i class="far fa-clipboard"></i></button>
   </div>
+
 
 
 </div>
@@ -249,8 +253,19 @@
     <button type="button" class="btn btn-dark btn-md" id="btn2mob"><i class="fab fa-android"></i> Android</button>
 
   </div> 
+
+  <div class="dark-mode">
   
+  <h4>Theme <i class="fas fa-adjust"></i></h4>
+  <label class="switch">
+    <input type="checkbox" name="darkmode" id="darkmodeid" onclick="darkmodefunc()">
+    <span class="slider round"></span>
+  </label>
+
+</div>
+
   </div>
+
 
 
       </div>
@@ -278,6 +293,8 @@
 
 
   <section class="section2">
+
+
 
     <div class="cgpacal-sec">
       <br>
