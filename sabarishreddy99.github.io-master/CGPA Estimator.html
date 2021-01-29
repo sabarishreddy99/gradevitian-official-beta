@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendance Calculator-gradeVITian</title>
+  <title>CGPA Estimator-gradeVITian</title>
 
   <link rel="icon" href="LOGO-192px.png" type="image/gif">
   <meta name="author" content="Sabarish Reddy Remala">
+  
+  <meta name="keywords" content=" cgpa esimation, gpa, vit, average, VIT cgpa calculator, instant cgpa, gpa calculator vit, grade vitian, gradevitan, grade vit, VIT, calculation, semester, vellore, vellore institute of technology, FAT, exams, class, project, lab, vitian, theory, j component">
+  <meta name="description" content="Hey guys! CGPA ESTIMATOR is an interesting section in all where you can estimate the GPA, credits to be taken in the upcomming semester to meet your desired CGPA.">
 
-  <meta name="keywords"
-    content="attendance Calculator VIT, grade predictor VIT, VIT grade calculator, VIT cgpa calculator, instant cgpa, gpa calculator vit, grade vitian, gradevitan, grade vit, VIT attendance calculator, gpa calculator, VIT, calculation, semester, vellore, vellore institute of technology, FAT, exams, class, project, lab, vitian, theory, j component">
-    
-  <meta name="description"
-    content="It is a tool for calculating your attendance percentage, where many of us bang ourselves in this and starts calculating with pen and paper. This section comprises of two formats, Format-1 deals with the no of classes present and classes absent. Format-2 with total no of classes and classes present or absent. Toggle to switch between them. You can make use of addons to increment and decrement your entries by one unit. The progress bar will alert you with the range by changing its colour. Click on compute if you are entering manually. Don't worry with the input range and special characters, it will alert you the very moment when it finds them.">
+
  
 <!-- bootstrap css-->
 
@@ -32,14 +31,13 @@
 
   <!-- stylesheets -->
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="Attendance Calculator.css">
+  <link rel="stylesheet" href="CGPA Estimator.css">
   
   <!-- Javascript files -->
   <script src="index.js"></script>
-  <script src="Attendance Calculator.js"></script>
+  <script src="CGPA Estimator.js"></script>
 
-
-  <!-- ---------- PWA FILES------------ -->
+    <!-- ---------- PWA FILES------------ -->
 
   	 
     <link rel="manifest" href="manifest.json">
@@ -50,16 +48,17 @@
     <meta name="theme-color" content="#ffffff">
     <script src="main.js" defer></script>
 
+
 </head>
 
 <body onload="loadfunc();introTEXTtypewriting();">
-
-  <!-- ---------------------- social links & loading   --------------------------------- -->
+  <!-- ---------------------- social links & loading   ------------------------------------- -->
   
   <div id="loading">
     <img src="loading.svg" alt="gradevitian">
     <h3>gradevitian.in</h3>
   </div>
+
 
 <!-- ----------------------------------  POP UP     --------------------------------------- -->
 
@@ -67,38 +66,9 @@
   <img class="result-img" src="result pop-up.svg" alt="gradeVITian result">
   
   <!-- BODY of pop-up -->
-
-<!-- -----------------------------section-1 pop up body--------------------------------- -->
-  <div class="progress" id="cbar-div">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" 
-    style="width:0%;height:22px;" id="cbar"></div>
-  </div>
-   <br>
- <strong><h5 id="cresult2"></h5></strong>
-
-
-
-
-<!-- -----------------------------section-2 pop up body--------------------------------- -->
-
  
-<div class="progress" id="bar-div">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%;height:22px;"
-    id="bar"></div>
-</div>
-<br>
-<h6 id="note-msg"><strong>Note:</strong> Use either any one of the
-  entries. (Classes Present or Classes Absent)</h6>
-  <br>
-<strong><h5 id="result2"></h5></strong>
-
-
-
-
-
-
-
-
+<h5 id="estcgpa" ></h5>
+<h5 id="estcgpa1"></h5>
 
 
 
@@ -113,14 +83,10 @@
 
 <!-- Total blur except pop up -->
 <div id="pop-up-blur">
-
-
-
-
 <!-- ----------------------------FIXED tops---------------------------------------------- -->
 
-<div class="fixed-tops" >
 
+<div class="fixed-tops" >
 
   <div class="go-to-top">
     <button  type="button" title="Go to top" onclick="topFunction()" class="btn btn-secondary btn-sm"><i class="fas fa-angle-double-up"></i></button>
@@ -128,15 +94,13 @@
 
 
   <div class="copy-clipboard">
-  <p id="clip-text" style="display: none;"> https://gradevitian.in/Attendance%20Calculator.html </p>
+  <p id="clip-text" style="display: none;"> https://gradevitian.in/CGPA%20Estimator.html </p>
   <button  type="button" data-toggle="tooltip" data-placement="right" title="Copy Link" class="btn btn-secondary btn-sm" id="copy-text-btn"><i class="far fa-clipboard"></i></button>
   </div>
-
-
-</div>
-
-
-
+  
+  
+  </div>
+  
 
 
   <!-- section1 -->
@@ -146,13 +110,14 @@
 
 
 <section id="section1">
+
 <div class="intro-content">
 <!-- navigation bar -->
 <div class="navigation">
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">gradeVITian</a>
+      <a class="navbar-brand" href="index.html"><img class="brand-logo" src="brand-logo.svg" alt="logo" />gradeVITian</a>
       <button class="navbar-toggler" type="button" onclick="openNav()">
         <i class="fas fa-ellipsis-h fa-2x"></i>
       </button>
@@ -184,10 +149,10 @@
             <a class="nav-link" href="Grade Predictor.html">Grade Predictor</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="CGPA Estimator.html">CGPA Estimator</a>
+            <a class="nav-link" style="color: #383754;" href="CGPA Estimator.html">CGPA Estimator</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: #383754;" href="Attendance Calculator.html">Attendance Calculator</a>
+            <a class="nav-link" href="Attendance Calculator.html">Attendance Calculator</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#explore-id">Explore</a>
@@ -215,15 +180,19 @@
 
         <div class="add2home">
 
-    <h4>Add to home screen</h4>
+  <h4>Add to home screen</h4>
+  
     <div class="twinbtns-pc">
-    <button type="button" class="btn btn-outline-dark btn-lg"><i class="fab fa-windows"></i> Windows</button>
-    <button type="button" class="btn btn-dark btn-lg"><i class="fab fa-android"></i> Android</button>
+    <button type="button" class="btn btn-outline-dark btn-lg" id="btn1pc"><i class="fab fa-windows"></i> Windows</button>
+    <button type="button" class="btn btn-dark btn-lg" id="btn2pc"><i class="fab fa-android"></i> Android</button>
   </div>     
 
+
+
   <div class="twinbtns-mob">
-    <button type="button" class="btn btn-outline-dark btn-md"><i class="fab fa-windows"></i> Windows</button>
-    <button type="button" class="btn btn-dark btn-md"><i class="fab fa-android"></i> Android</button>
+    <button type="button" class="btn btn-outline-dark btn-md" id="btn1mob"><i class="fab fa-windows"></i> Windows</button>
+    <button type="button" class="btn btn-dark btn-md" id="btn2mob"><i class="fab fa-android"></i> Android</button>
+
   </div> 
   
   </div>
@@ -250,52 +219,64 @@
 
 
 
-  <!-- section-2 -->
+  <!-- -----------------------------------section-2---------------------------------------- -->
 
 
   <section class="section2">
 
-    <div class="attendance-cal-1-sec">
+    <div class="cgpa-est-sec">
       <br>
-      <h2>Attendance Calculator</h2>
-      <h5>  Format-1 </h5>
+      <h2>CGPA Estimator</h2>
        <br>
 
-       <img class="attendance-inputimg" src="attendance-inp-img.svg" alt="Attendance Calculator">
-       <h1 class="attendance-1-txt">Your presence <i class="fas fa-check-circle"></i> <br> might be valuable.</h1>
+       <img class="cgpa-est-inputimg" src="target.svg" alt="CGPA Estimator">
+       <h1 class="cgpa-est-sec-txt">We believe, you will <br>always give your best.</h1>
 
-       <!-- form start -->
+       <!-- ------------------------------------form start---------------- -->
 
-       <form id="attendancecal-1-form">
 
-<br>
 
-<!-- --------------------------   attendance cal sec-1   ------------------------------------------ -->
-        <div>
 
-          <h6>Classes Present:</h6>
-            <input type="number" min="1" step="1" max="300" id="cone" placeholder="(max-100)"
-              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
-           
+       <form id="cgpaestform">
+
+
+         <div class="input-bottom-space">     
+         <h6>Do you Wanna be a _?_ Pointer <b>?</b> </h6>
+           <input type="number" id="CGPAneed" min="0" value="9.00" step="0.05" max="10" placeholder="Desired CGPA?">
+          </div> 
+      
         
+       
+     
+     
+         
+           <div class="input-bottom-space">
+           <h6>Current <b>CGPA</b></h6>
+           <input type="number" id="ccgpa" min="0" max="10" step="0.005" placeholder="Enter your current CGPA.">
+          </div> 
+       
+     
+     
+     
+           
+         <div class="input-bottom-space">     
+     <h6>Total no of <b>Credits</b> Completed</h6>
+           <input type="number" id="ccredits" min="1" max="300"  placeholder="(max-300)" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" >
+          </div>
      
 
-
-
-
-
-          <h6>Classes Absent:</h6>
-            <input type="number" min="1" max="300" step="1" id="ctwo" placeholder="(max-100)"
-              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
            
-        </div>
+         <div class="input-bottom-space">
+     <h6>No of <b>Credits</b> taken now</h6>
+      
+           <input type="number" id="ncredits" min="1" max="50"  placeholder="(max-50)" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" >
+          </div> 
+     
+     
+     
+     
+    
 
-
-
-
-
-         
-          
 
 
     <!-- submit buttons -->
@@ -305,13 +286,15 @@
 
      
          
-            <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="showPopup();attendancecal1reset();">Reset <i class="fas fa-sliders-h"></i></button>
+            <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="showPopup();cgpaestreset();">Reset <i class="fas fa-sliders-h"></i></button>
          
       
      
       
      
-            <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();cdivideBy();attendcal2null();">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+            <button type="button" class="btn btn-dark btn-md btn2" onclick="showPopup();cgpaestimation();" >Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
+
+
          
        
       </div>
@@ -339,106 +322,6 @@
 
 
 
-  <section class="section-2a" id="">
-
-
-    <div class="attendance-cal-2-sec">
-      <br>
-      <h5>Format-2</h5>
-       <br>
-
-       <img class="attendance-2-inputimg" src="attendance-cal-2 -inpimg.svg" alt="Instant CGPA Calculator">
-       <h1 class="attendance-2-txt">Be the best <br> version of yourself.</h1>
-       
-
-       <!-- form start -->
-
-       <form id="attendance-cal-2-form">
-
-        <div>
-
-
-
-          <h6 for="noc">Total no of  classes</h6>
-
-            <input type="number" id="noc" min="1" max="300" step="1" value="10"
-              placeholder="(max-200)"
-              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
-
-              <br>
-              
-           
-
-
-          <h6 for="one">No of classes present</h6>
-         
-            <input type="number" min="1" step="1" max="300" id="one" placeholder="(max-150)"
-              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
-           
-
-
-         
-            <h5>OR</h5>
-         
-
-
-
-
-          <h6 for="two">No of classes absent (>= 1)</h6>
-             
-            <input type="number" min="1" max="300" step="1" id="two" placeholder="(max-150)"
-              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
-            
-
-
-      </div>
-         
-
-      
-    
-
-        
-
-
-
-
-
-
-        
-    <!-- submit buttons -->
-
-    <div class="compute-btn">
-
-
-     
-         
-      <button type="button" class="btn btn-outline-dark btn-md btn1" onclick="showPopup();attendancecal2reset();">Reset <i class="fas fa-sliders-h"></i></button>
-   
-
-
-
-
-      <button type="button" class="btn btn-dark btn-md btn2" onClick="showPopup();divideBy();attendcal1null();">Compute <i class="fas fa-arrow-alt-circle-right"></i></button>
-   
- 
-</div>
-
-        </form>
-
-        </div>
-    
-    
-      
-    
-    
-    
-      </section>
-    
-
-
-
-
-
 
   <section class="section3" id="explore-id">
 
@@ -454,13 +337,12 @@
 
     <div class="exp-btns">
 
-      <button type="button" class="btn btn-outline-dark btn-lg btn-md btn-sm" onclick="window.location.href='CGPA Estimator.html'"> CGPA Estimator <i class="fas fa-arrow-alt-circle-right"></i></button>
-    <button type="button" class="btn btn-dark btn-lg btn-md btn-sm" onclick="window.location.href='CGPA Calculator.html'">CGPA Calculator <i class="fas fa-arrow-alt-circle-right"></i></button>
-    <button type="button" class="btn btn-outline-dark btn-lg btn-md btn-sm" onclick="window.location.href='GPA Calculator.html'"> GPA Calculator <i class="fas fa-arrow-alt-circle-right"></i></button>
-    <button type="button" class="btn btn-dark btn-lg btn-md btn-sm" onclick="window.location.href='Grade Predictor.html'">Grade Predictor <i class="fas fa-arrow-alt-circle-right"></i></button>
+      <button type="button" class="btn btn-outline-dark btn-lg btn-md btn-sm" onclick="window.location.href='Grade Predictor.html'">Grade Predictor <i class="fas fa-arrow-alt-circle-right"></i></button>
+    <button type="button" class="btn btn-dark btn-lg btn-md btn-sm" onclick="window.location.href='Attendance Calculator.html'">Attendance Calculator <i class="fas fa-arrow-alt-circle-right"></i></button>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-md btn-sm" onclick="window.location.href='CGPA Calculator.html'">CGPA Calculator <i class="fas fa-arrow-alt-circle-right"></i></button>
+    <button type="button" class="btn btn-dark btn-lg btn-md btn-sm" onclick="window.location.href='GPA Calculator.html'">GPA Calculator <i class="fas fa-arrow-alt-circle-right"></i></button>
 
 
-    
     <button type="button" class="btn btn-outline-dark btn-lg btn-md btn-sm" onclick="window.location.href='comments.html'">Leave a comment <i class="fas fa-comments"></i></button>
 
    
@@ -471,7 +353,6 @@
     <br>
     <br>
     <br>
-
 
     <div class="exp-btns-add">
    
@@ -658,105 +539,89 @@
 </div>
 
 
+<!-- ----------------------------------input alerts----------------------------------- -->
 <script>
 
- //All input limits
- document.getElementById("noc").onkeyup = function () {
-      var input = parseInt(this.value);
-      if (Number.isNaN(input)) {
-        document.getElementById("noc").value = "";
-      }
+  
+document.getElementById("CGPAneed").onkeyup=function(){
+  var input=parseFloat(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("CGPAneed").value="";
+  }
+  
+  if(input<0 || input>10)
+  {
+  alert("Value should be between 0 - 10");
+  document.getElementById("CGPAneed").value="";
+}
 
-      if (input < 1 || input > 200) {
-        alert("Value should be between 1 - 200");
-        document.getElementById("noc").value = "";
-      }
+return;
 
-      return;
-
-    }
-
-
-
-
-    document.getElementById("one").onkeyup = function () {
-      var input = parseInt(this.value);
-      if (Number.isNaN(input)) {
-        document.getElementById("one").value = "";
-      }
-
-      if (input < 0 || input > 150) {
-        alert("Value should be between 0 - 150");
-        document.getElementById("one").value = "";
-      }
-
-      return;
-
-    }
+}
 
 
 
+document.getElementById("ccgpa").onkeyup=function(){
+  var input=parseFloat(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("ccgpa").value="";
+  }
+  
+  if(input<0 || input>10)
+  {
+  alert("Value should be between 0 - 10");
+  document.getElementById("ccgpa").value="";
+}
 
+return;
 
-
-    document.getElementById("two").onkeyup = function () {
-      var input = parseInt(this.value);
-      if (Number.isNaN(input)) {
-        document.getElementById("two").value = "";
-      }
-
-      if (input < 0 || input > 150) {
-        alert("Value should be between 0 - 150");
-        document.getElementById("two").value = "";
-      }
-
-      return;
-
-    }
+}
 
 
 
 
+document.getElementById("ccredits").onkeyup=function(){
 
-    document.getElementById("cone").onkeyup = function () {
-      var input = parseInt(this.value);
-      if (Number.isNaN(input)) {
-        document.getElementById("cone").value = "";
-      }
+  var input=parseInt(this.value);
 
-      if (input < 0 || input > 100) {
-        alert("Value should be between 0 - 100");
-        document.getElementById("cone").value = "";
-      }
+  if(Number.isNaN(input)){
+        document.getElementById("ccredits").value="";
+  }
+  
+  if(input<1 || input>300)
+  {
+  alert("Value should be between 1 - 300");
+  document.getElementById("ccredits").value="";
+}
 
-      return;
+return;
 
-    }
-
-
-
-
-
-
-    document.getElementById("ctwo").onkeyup = function () {
-      var input = parseInt(this.value);
-      if (Number.isNaN(input)) {
-        document.getElementById("ctwo").value = "";
-      }
-
-      if (input < 0 || input > 100) {
-        alert("Value should be between 0 - 100");
-        document.getElementById("ctwo").value = "";
-      }
-
-      return;
-
-    }
+}
 
 
 
+document.getElementById("ncredits").onkeyup=function(){
 
-    
+
+  var input=parseInt(this.value);
+  if(Number.isNaN(input)){
+        document.getElementById("ncredits").value="";
+  }
+  
+  if(input<1 || input>50)
+  {
+  alert("Value should be between 1 - 50");
+  document.getElementById("ncredits").value="";
+}
+
+return;
+
+}
+
+
+
+
+
 // ------------------------------- copy-clip board--------------------------------
 function copyText(htmlElement){
   if(!htmlElement){
@@ -781,6 +646,7 @@ copyText(document.querySelector('#clip-text'));
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
 
 
 

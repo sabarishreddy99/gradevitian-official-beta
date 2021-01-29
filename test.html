@@ -1,103 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-#loading {
-  position: absolute;
-  background-color: #efeeee;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  font-family: "Montserrat", sans-serif;
-  color: #383754;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-#loading img{
-  height: 150px;
-}
-  </style>
-</head>
-<body>
-  <!-- <div id="loading">
-    <img src="loading.svg" alt="gradevitian">
-    <h3>gradevitian.in</h3>
-  </div> -->
-
-  <h1>
-    <a href="" class="typewrite" data-period="2000" data-type='[ "GPA.", "CGPA.", "Attendance %.", "Grades." ]'>
-      <span class="wrap"></span>
-    </a>
-  </h1>
-
-  <script>
-
-var TxtType = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-  this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-  this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-  delta = this.period;
-  this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-  this.isDeleting = false;
-  this.loopNum++;
-  delta = 500;
-  }
-
-  setTimeout(function() {
-  that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i=0; i<elements.length; i++) {
-      var toRotate = elements[i].getAttribute('data-type');
-      var period = elements[i].getAttribute('data-period');
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .drop-down {
+        position: relative;
+        display: inline-block;
       }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
-};
+      .drop-down-cont {
+        display: none;
+        position: absolute;
+        background-color: aqua;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        min-width: 20px;
+        transform: translateY(-2em);
+        z-index: 1;
+        transition: all 0.3s ease-in-out 0s;
+      }
 
-  </script>
-</body>
+      .drop-down-cont:hover {
+        width: 500px;
+      }
+      .drop-down:hover .drop-down-cont {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br />
+    <br /><br /><br /><br /><br />
+    <div class="drop-down">
+      <button>hello</button>
+      <div class="drop-down-cont">
+        <h1>hello</h1>
+        <h1>hi</h1>
+        <h1>vanakkam</h1>
+      </div>
+    </div>
+  </body>
 </html>

@@ -50,6 +50,7 @@ a:hover {
 #loading img {
   height: 200px;
 }
+
 /* ------------------  Sweet Alert --------------------------------------- */
 
 .swal-text {
@@ -73,6 +74,10 @@ a:hover {
   align-items: center;
   text-align: center;
   z-index: 3;
+
+  /* wrapping the items (Additional) */
+  flex-wrap: wrap;
+  /* ------------ */
 }
 
 #new-year img {
@@ -99,22 +104,79 @@ textarea:focus {
 
 /* --------------------------------------   Fixed tops    -------------------------------- */
 
-.go-to-top {
+.share-section {
   position: fixed;
-  right: 2.5%;
+  display: inline-block;
+  right: 3.5%;
   bottom: 2.5%;
   z-index: 1;
 }
 
-.go-to-top button i {
+#share-btn {
+  z-index: 2;
+}
+
+.share-content {
+  display: none;
+  background-color: #efeeee;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  bottom: -15%;
+  text-align: center;
+  z-index: -1;
+  min-width: 55px;
+  left: -7px;
+  border-radius: 50px;
+}
+
+.share-content a {
+  display: block;
+  cursor: pointer;
+}
+
+.share-content a:hover {
+  background-color: rgb(226, 224, 224);
+}
+
+.share-content a i {
+  font-size: 30px;
+  padding: 8px;
+}
+
+.share-section:hover .share-content {
+  display: block;
+}
+
+.share-section button i {
   font-size: 20px;
 }
 
-.copy-clipboard {
+#whatsapp {
+  color: #228b22;
+}
+
+#twitter {
+  color: #1e90ff;
+}
+
+#facebook {
+  color: #483d8b;
+}
+
+#linkedin {
+  color: #191970;
+}
+
+.go-to-top {
   position: fixed;
-  left: 2.5%;
-  bottom: 2.5%;
+  left: 50%;
+  bottom: 0.5%;
   z-index: 1;
+}
+
+.go-to-top i {
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .fixed-tops button {
@@ -125,7 +187,6 @@ textarea:focus {
 .fixed-tops i {
   font-size: 22px;
 }
-
 /* ------------------------------------------   SECTION-1  --------------------------------------- */
 #section1 {
   background-color: #add8e6;
@@ -149,6 +210,14 @@ textarea:focus {
   font-size: 40px;
 }
 
+.brand-logo {
+  height: 60px;
+  width: 60px;
+  margin-right: 3px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
 #navbarNav {
   font-family: "Montserrat", sans-serif;
   color: #383754;
@@ -162,7 +231,7 @@ textarea:focus {
 .overlay {
   height: 0%;
   width: 100%;
-  padding-top: 300px;
+  padding-top: 270px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -510,12 +579,6 @@ textarea:focus {
     height: 150px;
   }
   /* --------------------------------  fixed tops ----------------------------------------------- */
-  .go-to-top {
-    position: fixed;
-    right: 3.5%;
-    bottom: 1.5%;
-    z-index: 1;
-  }
 
   .copy-clipboard {
     position: fixed;
@@ -527,6 +590,10 @@ textarea:focus {
   /* --------------------------------------SECTION-1-------------------------------------- */
   .navbar-brand {
     font-size: 30px;
+  }
+
+  .brand-logo {
+    display: none;
   }
 
   .intro-img {
@@ -650,6 +717,10 @@ textarea:focus {
 /* ------------------------------------    TABLET     -------------------------------------------- */
 @media screen and (min-width: 500px) and (max-width: 750px) {
   /* -----------------------------------SECTION -1 ------------------------------------------- */
+  .brand-logo {
+    display: none;
+  }
+
   .intro-img {
     height: 850px;
     width: 850px;
@@ -806,70 +877,4 @@ textarea:focus {
   .devices-txt {
     display: none;
   }
-}
-
-/* ----------------------------------------------dark mode---------------------- */
-
-.dark-mode {
-  margin-top: 30px;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(216, 214, 214);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #383754;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #383754;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }

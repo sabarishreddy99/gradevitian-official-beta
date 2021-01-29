@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA Calculator-gradeVITian</title>
+
+    <link rel="icon" href="LOGO-192px.png" type="image/gif" />
+    <meta name="author" content="Sabarish Reddy Remala" />
+
+    <meta
+      name="keywords"
+      content="gpa, gpa calculator vit, gpa calculator, vit, grade vitian, gradevitan, grade vit, VIT, calculation, semester, vellore, vellore institute of technology, FAT, exams, class, project, lab, vitian, theory, j component"
+    />
+
+    <meta
+      name="description"
+      content="VITians can compute their GPA with the course credits and the grade they have secured in that particular semester accurately up to 3 decimal places with in no time."
+    />
+
+    <!-- bootstrap css-->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- bootstrap JS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="GPA Calculator.css" />
+
+    <!-- Javascript files -->
+    <script src="index.js"></script>
+    <script src="GPA Calculator.js"></script>
+
+    <!-- ---------- PWA FILES------------ -->
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="LOGO-192px.png" />
+    <link rel="apple-touch-icon" href="LOGO-512px.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" />
+    <meta name="theme-color" content="#ffffff" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body onload="loadfunc();introTEXTtypewriting();">
+    <!-- ---------------------- social links , loading & custom pop up   --------------------- -->
+
+    <div id="loading">
+      <img src="loading.svg" alt="gradevitian" />
+      <h3>gradevitian.in</h3>
+    </div>
+
+    <!-- ----------------------------------  POP UP     --------------------------------------- -->
+
+    <div class="full-screen flex-container-center hidden" id="pop-up-result">
+      <img
+        class="result-img"
+        src="result pop-up.svg"
+        alt="gradeVITian result"
+      />
+
+      <!-- BODY of pop-up -->
+
+      <!-- gpa calculation -->
+
+      <h5><strong id="alertgpacal"></strong></h5>
+      <h5 id="alertgpacal1"></h5>
+
+      <!-- gpa calculation reset -->
+
+      <h5><strong id="alertgpacalr"></strong></h5>
+      <h5 id="alertgpacal1r"></h5>
+
+      <i class="pop-up-close-icon" title="Close" onclick="closePopup()"
+        ><i class="far fa-times-circle fa-2x"></i
+      ></i>
+      <button
+        class="pop-up-close-button btn btn-dark btn-sm"
+        type="button"
+        title="Close pop-up"
+        onclick="closePopup()"
+      >
+        Close
+      </button>
+      <h6 class="pop-up-watermark">gradeVITian.in</h6>
+    </div>
+    <!-- ---------------------------------------  POP UP END  ---------------------------------- -->
+
+    <!-- Total blur except pop up -->
+    <div id="pop-up-blur">
+      <!-- ----------------------------FIXED tops---------------------------------------------- -->
+
+      <div class="fixed-tops">
+        <div class="go-to-top">
+          <i
+            title="Go to top"
+            onclick="topFunction()"
+            class="fas fa-angle-double-up"
+          ></i>
+        </div>
+
+        <div class="share-section">
+          <button
+            type="button"
+            id="share-btn"
+            title="Go to top"
+            class="btn btn-secondary btn-sm"
+          >
+            <i class="fas fa-share-alt"></i>
+          </button>
+          <!-- SHARE CONTENT -->
+          <div class="share-content">
+            <a
+              id="whatsapp"
+              title="Whatsapp"
+              href="https://wa.me/?text=https://gradevitian.in/"
+              target="_blank"
+              ><i class="fab fa-whatsapp fa-2x"></i
+            ></a>
+
+            <a
+              id="linkedin"
+              title="Linked in"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgradevitian.in%2F"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin-in fa-2x"></i>
+            </a>
+
+            <a
+              id="twitter"
+              title="twitter"
+              href="https://twitter.com/intent/tweet?text=https://gradevitian.in/"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a
+              id="facebook"
+              title="Facebook"
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgradevitian.in%2F&amp;src=sdkpreparse"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <a
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Copy Link"
+              id="copy-text-btn"
+              ><i class="far fa-clipboard"></i
+            ></a>
+            <p id="clip-text" style="display: none">https://gradevitian.in/</p>
+
+            <br />
+            <br />
+          </div>
+          <!-- SHARE CONTENT END -->
+        </div>
+      </div>
+
+      <!-- section1 -->
+
+      <section id="section1">
+        <div class="intro-content">
+          <!-- navigation bar -->
+          <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"
+                  ><img
+                    class="brand-logo"
+                    src="brand-logo.svg"
+                    alt="logo"
+                  />gradeVITian</a
+                >
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  onclick="openNav()"
+                >
+                  <i class="fas fa-ellipsis-h fa-2x"></i>
+                </button>
+
+                <div id="myNav" class="overlay">
+                  <a
+                    href="javascript:void(0)"
+                    class="closebtn"
+                    onclick="closeNav()"
+                    ><i class="fas fa-times fa-1.5x"></i
+                  ></a>
+                  <div class="overlay-content">
+                    <a href="GPA Calculator.html">GPA Calculator</a>
+                    <a href="index.html">CGPA Calculator</a>
+                    <a href="Grade Predictor.html">Grade Predictor</a>
+                    <a href="CGPA Estimator.html">CGPA Estimator</a>
+                    <a href="Attendance Calculator.html"
+                      >Attendance Calculator</a
+                    >
+                    <a href="#explore-id">Explore</a>
+                  </div>
+                </div>
+
+                <div
+                  class="collapse navbar-collapse justify-content-end"
+                  id="navbarNav"
+                >
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">CGPA Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        style="color: #383754"
+                        href="GPA Calculator.html"
+                        >GPA Calculator</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Grade Predictor.html"
+                        >Grade Predictor</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="CGPA Estimator.html"
+                        >CGPA Estimator</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Attendance Calculator.html"
+                        >Attendance Calculator</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#explore-id">Explore</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-6">
+              <div class="intro-text">
+                <h1>Hi there!</h1>
+                <h1 class="intro-txt-line-2">I'll help you in computing</h1>
+                <h1>
+                  <a
+                    href=""
+                    class="typewrite"
+                    data-period="2000"
+                    data-type='[ "GPA.", "CGPA.", "Attendance %.", "Grades." ]'
+                  >
+                    <span class="wrap"></span>
+                  </a>
+                </h1>
+
+                <div class="add2home">
+                  <h4>Add to home screen</h4>
+
+                  <div class="twinbtns-pc">
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark btn-lg"
+                      id="btn1pc"
+                    >
+                      <i class="fab fa-windows"></i> Windows
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-dark btn-lg"
+                      id="btn2pc"
+                    >
+                      <i class="fab fa-android"></i> Android
+                    </button>
+                  </div>
+
+                  <div class="twinbtns-mob">
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark btn-md"
+                      id="btn1mob"
+                    >
+                      <i class="fab fa-windows"></i> Windows
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-dark btn-md"
+                      id="btn2mob"
+                    >
+                      <i class="fab fa-android"></i> Android
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6">
+              <img class="intro-img" src="intro-img.svg" alt="Graduation" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section-2 -->
+
+      <section class="section2">
+        <div class="gpacal-sec">
+          <br />
+          <h2>GPA Calculator</h2>
+          <br />
+
+          <img class="gpainputimg" src="gpaimg.svg" alt="GPA Calculator" />
+
+          <!-- form start -->
+
+          <form id="gpacalform">
+            <!-- ---------------------------------   course-1   ------------------------------------------ -->
+            <div class="row course-division">
+              <h5>Course-1</h5>
+              <br />
+
+              <div class="col align-self-start course-div-parts">
+                <h6>Credits</h6>
+                <select id="gcred1">
+                  <option selected="selected">Credits</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>20</option>
+                </select>
+              </div>
+
+              <div class="col align-self-center course-div-parts">
+                <h6>Category</h6>
+                <select id="gcat1" placeholder="Course Category">
+                  <option selected="selected">Course Category</option>
+                  <option>PC (Program Core)</option>
+                  <option>PE (Program Elective)</option>
+                  <option>UC (University Core)</option>
+                  <option>UE (University Elective)</option>
+                </select>
+              </div>
+
+              <div class="col align-self-end course-div-parts">
+                <h6>Grade</h6>
+                <select id="ggrad1">
+                  <option selected="selected">Grade</option>
+                  <option>S</option>
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                  <option>D</option>
+                  <option>E</option>
+                  <option>F</option>
+                  <option>N</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ---------------------------   course-2   ------------------------------------------ -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-2</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred2">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat2" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad2">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---------------------------   course-3   ------------------------------------------ -->
+            <div class="course-division">
+              <br />
+              <div class="row">
+                <h5>Course-3</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred3">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat3" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad3">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- --------------------------   course-4  ------------------------------------- -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-4</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred4">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat4" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad4">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---------------------------------   course-5   --------------------------------- -->
+            <div class="course-division">
+              <br />
+              <div class="row">
+                <h5>Course-5</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred5">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat5" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad5">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ---------------------------------   course-6   ---------------------------------- -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-6</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred6">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat6" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad6">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- --------------------   course-7   ------------------------------------------ -->
+            <div class="course-division">
+              <br />
+              <div class="row">
+                <h5>Course-7</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred7">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat7" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad7">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- -----------------------   course-8   ------------------------------------------ -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-8</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred8">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat8" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad8">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- ------------------------   course-9   ------------------------------------------ -->
+            <div class="course-division">
+              <br />
+              <div class="row">
+                <h5>Course-9</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred9">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat9" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad9">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- -----------------------   course-10   ------------------------------------------ -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-10</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred10">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat10" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad10">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- -----------------------   course-11   ------------------------------------------ -->
+            <div class="course-division">
+              <br />
+              <div class="row">
+                <h5>Course-11</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred11">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat11" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad11">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- -----------------------   course-12   ------------------------------------------ -->
+            <div class="course-division-dark-variant">
+              <br />
+              <div class="row">
+                <h5>Course-12</h5>
+                <br />
+
+                <div class="col align-self-start course-div-parts">
+                  <h6>Credits</h6>
+                  <select id="gcred12">
+                    <option selected="selected">Credits</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>20</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-center course-div-parts">
+                  <h6>Category</h6>
+                  <select id="gcat12" placeholder="Course Category">
+                    <option selected="selected">Course Category</option>
+                    <option>PC (Program Core)</option>
+                    <option>PE (Program Elective)</option>
+                    <option>UC (University Core)</option>
+                    <option>UE (University Elective)</option>
+                  </select>
+                </div>
+
+                <div class="col align-self-end course-div-parts">
+                  <h6>Grade</h6>
+                  <select id="ggrad12">
+                    <option selected="selected">Grade</option>
+                    <option>S</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>N</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <h6 class="gpacal-note">
+              <b>Note:</b> Category is <em>optional.</em>
+            </h6>
+
+            <!-- submit buttons -->
+
+            <div class="compute-btn">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-md btn1"
+                onclick="showPopup();gpacalreset();"
+              >
+                Reset <i class="fas fa-sliders-h"></i>
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-dark btn-md btn2"
+                onclick="showPopup();gpacal()"
+              >
+                Compute <i class="fas fa-arrow-alt-circle-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section3" id="explore-id">
+        <div class="explore-sec">
+          <img src="explore.svg" alt="Other options" class="explore-img" />
+
+          <h1>
+            Explore... <br />
+            gradevitian.in
+          </h1>
+
+          <div class="exp-btns">
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-lg btn-md btn-sm"
+              onclick="window.location.href='CGPA Estimator.html'"
+            >
+              CGPA Estimator <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-dark btn-lg btn-md btn-sm"
+              onclick="window.location.href='Attendance Calculator.html'"
+            >
+              Attendance Calculator
+              <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-lg btn-md btn-sm"
+              onclick="window.location.href='CGPA Calculator.html'"
+            >
+              CGPA Calculator <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-dark btn-lg btn-md btn-sm"
+              onclick="window.location.href='Grade Predictor.html'"
+            >
+              Grade Predictor <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-dark btn-lg btn-md btn-sm"
+              onclick="window.location.href='comments.html'"
+            >
+              Leave a comment <i class="fas fa-comments"></i>
+            </button>
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <div class="exp-btns-add">
+            <a href="https://wa.me/?text=https://gradevitian.in/"
+              ><i class="fab fa-whatsapp fa-2x"></i
+            ></a>
+
+            <a
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgradevitian.in%2F"
+            >
+              <i class="fab fa-linkedin-in fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEEDBACK -->
+
+      <section class="section4">
+        <div class="feedback-sec">
+          <img class="feedback-img" src="feedback.svg" alt="REVIEWS" />
+          <img class="improve-img" src="improve.svg" alt="Improve" />
+          <h1 class="feedback-appreciation">
+            Your Feedback is <br />highly appreciated!
+          </h1>
+
+          <div class="feedback-sec-txt">
+            <h2>Help us improve.</h2>
+            <h6>Was this helpful?</h6>
+
+            <div>
+              <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScU5sLk7MvefZpVwBOzL4essV7cU8zUlIvuystDjRBqyjeD5g/formResponse"
+                method="post"
+                target="hidden_iframe"
+                onsubmit="validatedetails()"
+              >
+                <div class="thumbs-btn">
+                  <button
+                    type="button"
+                    class="btn btn-lg"
+                    title="Yes"
+                    id="yes"
+                    onclick="yes1()"
+                  >
+                    <i class="fas fa-thumbs-up"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-lg"
+                    title="No"
+                    id="no"
+                    onclick="no1()"
+                  >
+                    <i class="fas fa-thumbs-down"></i>
+                  </button>
+
+                  <input
+                    type="hidden"
+                    id="helpful"
+                    name="entry.1222579797"
+                    value=""
+                  />
+                </div>
+
+                <div>
+                  <h6>Name :</h6>
+                  <input
+                    type="text"
+                    id="Name"
+                    name="entry.946033457"
+                    placeholder="Your good name..."
+                    value=""
+                  />
+                </div>
+
+                <div>
+                  <h6>Your message :</h6>
+
+                  <textarea
+                    rows="5"
+                    id="Message"
+                    name="entry.1814573274"
+                    placeholder="Your suggestions..."
+                    value=""
+                  ></textarea>
+                </div>
+
+                <div class="feedback-send">
+                  <button
+                    type="submit"
+                    class="btn btn-dark btn-lg"
+                    title="Send Feedback"
+                    id="send"
+                    onclick="sendfeedback()"
+                  >
+                    Send <i class="far fa-paper-plane"></i>
+                  </button>
+                </div>
+
+                <!--Update the URL for thank you page on form submit -->
+                <iframe
+                  name="hidden_iframe"
+                  id="hidden_iframe"
+                  style="display: none"
+                  onload="if(submitted) {window.location='https://gradevitian.in/';}"
+                ></iframe>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-sec">
+        <img class="foot-img" src="sabari-avtar.jpg" alt="Sabarish Reddy RJ" />
+        <p class="indian">Proud Indian!</p>
+
+        <div class="foot-content">
+          <p>Designed by</p>
+          <h6>Sabarish Reddy R J</h6>
+          <p>Electrical and Electronics Engineering.</p>
+          <p>
+            VIT '21, <a href="https://vit.ac.in/">vellore</a>.
+            <i class="far fa-copyright"></i> 2021
+          </p>
+          <p>
+            <a href="mailto:sabarirjsr@gmail.com"
+              ><i class="fas fa-envelope mail-icon"></i> sabarirjsr@gmail.com</a
+            >
+          </p>
+          <p>
+            Made with <b><i class="fas fa-heart"></i></b> to all <b>#VITians</b>
+          </p>
+
+          <a
+            href="https://www.youtube.com/channel/UCjvTrInXpvuMbBg4aEbkeQQ?view_as=subscriber"
+            ><i class="fab fa-youtube social-icons"></i
+          ></a>
+
+          <a href="https://linkedin.com/in/sabarishreddyrj"
+            ><i class="fab fa-linkedin-in social-icons"></i
+          ></a>
+
+          <a href="https://www.facebook.com/profile.php?id=100006556459387"
+            ><i class="fab fa-facebook-f social-icons"></i
+          ></a>
+
+          <a href="https://www.instagram.com/sabarish_reddi.rj/"
+            ><i class="fab fa-instagram social-icons"></i
+          ></a>
+        </div>
+
+        <img src="winner.svg" class="winner-img" alt="gradevitian.in" />
+        <img src="devices.svg" class="devices-img" alt="Mobile-Tablet-PC" />
+        <h1 class="winner-txt">gradeVITian.in</h1>
+        <h3 class="devices-txt">
+          Compatible with <br />
+          all devices. <i class="fas fa-check-circle"></i>
+        </h3>
+
+        <div class="foot-logo-txt"></div>
+
+        <div class="foot-icons"></div>
+      </footer>
+    </div>
+
+    <script>
+      // ------------------------------- copy-clip board--------------------------------
+      function copyText(htmlElement) {
+        if (!htmlElement) {
+          return;
+        }
+
+        let elementText = htmlElement.innerText;
+        let inputElement = document.createElement("input");
+        inputElement.setAttribute("value", elementText);
+        document.body.appendChild(inputElement);
+        inputElement.select();
+        document.execCommand("copy");
+        inputElement.parentNode.removeChild(inputElement);
+      }
+      document.querySelector("#copy-text-btn").onclick = function () {
+        copyText(document.querySelector("#clip-text"));
+      };
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+  </body>
+</html>
